@@ -158,10 +158,7 @@ html
             .panel-heading
               strong #{settings.locale.masternodecount}
             .panel-body
-              #masternodepanel
-                span.glyphicon.fa.fa-exclamation-triangle
-                label#masternodeCountOffline -
-                label &nbsp;&#x2F;&nbsp;        
+              #masternodepanel       
                 label#masternodeCountOnline -
                 span.glyphicon.fa.fa-check-circle
         .col-md-2.col-sm-12
@@ -219,6 +216,7 @@ html
               a.navbar-link(href='https://github.com/carsenk/diquidus-explorer', target='_blank') Powered by Diquidus Explorer 
       span.connections
         label#lblBlockcount.label.label-default -
+        label#masternodeCountOnline.label.label-default -
         label#lblConnections.label.label-default -
 
 
