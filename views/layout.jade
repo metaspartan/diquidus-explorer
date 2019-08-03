@@ -27,7 +27,7 @@ html
         function update_stats(){   
           $.ajax({url: '/ext/summary', success: function(json){
             $("#supply").text(json.data[0].supply);
-			$("#masternodeCount").text(json.data[0].masternodeCount);
+            $("#masternodeCount").text(json.data[0].masternodeCount);
             $("#masternodeCountOnline").text(json.data[0].masternodeCountOnline);
             $("#difficulty").text(json.data[0].difficulty);
             $("#difficultyHybrid").text(json.data[0].difficultyHybrid);
