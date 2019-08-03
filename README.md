@@ -1,23 +1,16 @@
-Iquidus Explorer - 1.6.1
+Diquidus Explorer - 1.6.9
 ================
 
-An open source block explorer written in node.js.
+An open source block explorer written in node.js based off original iquidus and ciquidus explorers.
 
-### See it in action
-
-*  [Jumbucks](http://explorer.getjumbucks.com)
-*  [Sphere](http://sphere.iquidus.io)
-*  [SAR](http://explorer.sarcoin.info)
-*  [Vanillacoin](https://blockchain.vanillacoin.net/)
-*  [Neoscoin](http://explorer.infernopool.com/)  
-*  [C2Chain](http://c2chain.info/)
-
-*note: If you would like your instance mentioned here contact me*
+Diquidus features sendrawtx API and UTXO APIs as well as masternode counts. CoinExchange and TradeOgre market APIs available.
 
 ### Requires
 
 *  node.js >= 0.10.28
 *  mongodb 2.6.x
+*  libzmq-dev
+*  libkrb5-dev
 *  *coind
 
 ### Create database
@@ -40,7 +33,11 @@ Create user with read/write access:
 
 ### Get the source
 
-    git clone https://github.com/iquidus/explorer explorer
+    git clone https://github.com/carsenk/diquidus-explorer explorer
+	
+### Install deps
+
+	sudo apt-get install build-essential pkg-config libzmq-dev libkrb5-dev
 
 ### Install node modules
 
@@ -100,14 +97,9 @@ sync.js (located in scripts/) is used for updating the local databases. This scr
 
 ### Wallet
 
-Iquidus Explorer is intended to be generic so it can be used with any wallet following the usual standards. The wallet must be running with atleast the following flags
+Diquidus Explorer is intended to be generic so it can be used with any wallet following the usual standards. The wallet must be running with atleast the following flags
 
     -daemon -txindex
-
-### Donate
-
-    BTC: 168hdKA3fkccPtkxnX8hBrsxNubvk4udJi
-    JBS: JZp9893FMmrm1681bDuJBU7c6w11kyEY7D
 
 ### Known Issues
 
