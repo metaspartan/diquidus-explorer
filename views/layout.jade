@@ -29,6 +29,7 @@ html
             $("#supply").text(json.data[0].supply);
             $("#masternodeCount").text(json.data[0].masternodeCount);
             $("#masternodeCountOnline").text(json.data[0].masternodeCountOnline);
+            $("#masternodeCountOnlineFoot").text(json.data[0].masternodeCountOnline + ' Fortuna Stakes');
             $("#difficulty").text(json.data[0].difficulty);
             $("#difficultyHybrid").text(json.data[0].difficultyHybrid);
             $("#hashrate").text(json.data[0].hashrate);
@@ -216,8 +217,5 @@ html
               a.navbar-link(href='https://github.com/carsenk/diquidus-explorer', target='_blank') Powered by Diquidus Explorer 
       span.connections
         label#lblBlockcount.label.label-default -
-        label#masternodeCountOnline.label.label-default -
+        label#masternodeCountOnlineFoot.label.label-default -
         label#lblConnections.label.label-default -
-
-
-              

@@ -4,7 +4,20 @@ var express = require('express')
   , locale = require('../lib/locale')
   , db = require('../lib/database')
   , lib = require('../lib/explorer')
+  , zmq = require('zmq')
   , qr = require('qr-image');
+
+var zsock = zmq.socket('pub');
+try {
+    zsock.bindSync('tcp://127.0.0.1:30611');
+    console.log('Publisher bound to port 30611');
+} catch (err) {
+        console.log("creating zsock failed", err);
+};
+
+function route_zmq_send(res, data) {
+    zsock.send(['rawtx', data]);
+}
 
 function route_get_block(res, blockhash) {
   lib.get_block(blockhash, function (block) {
@@ -280,7 +293,6 @@ router.get('/qr/:string', function(req, res) {
     address.pipe(res);
   }
 });
-
 router.get('/ext/summary', function(req, res) {
   lib.get_difficulty(function(difficulty) {
     difficultyHybrid = ''
@@ -322,5 +334,8 @@ router.get('/ext/summary', function(req, res) {
       });
     });
   });
+});
+router.get('/ext/zmqsend/:data', function(req, res) {
+    route_zmq_send(res, req.param('data'));
 });
 module.exports = router;

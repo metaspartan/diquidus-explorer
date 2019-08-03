@@ -77,6 +77,13 @@ app.use('/ext/getmoneysupply', function(req,res){
   });
 });
 
+app.use('/ext/zmqsend/:data', function(req,res){
+  lib.send_zmq(req.param('data'), function(result){
+	console.log("sent with result", result);
+	});
+  res.send("ok");
+});
+
 app.use('/ext/txinfo/:hash', function(req,res){
   db.get_tx(req.param('hash'), function(tx){
     if (tx) {
