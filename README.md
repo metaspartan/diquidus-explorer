@@ -1,4 +1,4 @@
-Diquidus Explorer - 1.6.9
+Diquidus Explorer - 1.6.9.1
 ================
 
 An open source block explorer written in node.js based off original iquidus and ciquidus explorers.

@@ -5,15 +5,15 @@
 */
 {
   // name your instance!
-  "title": "IQUIDUS",
+  "title": "DIQUIDUS",
 
   "address": "127.0.0.1:3001",
 
   // coin name
-  "coin": "Darkcoin",
+  "coin": "Denarius",
 
   // coin symbol
-  "symbol": "DRK",
+  "symbol": "D",
 
   // logo
   "logo": "/images/logo.png",
@@ -43,12 +43,13 @@
   //update script settings
   "update_timeout": 10,
   "check_timeout": 250,
+  "block_parallel_tasks": 1,
 
   // wallet settings
   "wallet": {
     "host": "localhost",
     "port": 9332,
-    "user": "darkcoinrpc",
+    "user": "denariusrpc",
     "pass": "123gfjk3R3pCCVjHtbRde2s5kzdf233sa"
   },
 

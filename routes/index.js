@@ -109,24 +109,7 @@ function route_get_address(res, hash, count) {
   db.get_address(hash, function(address) {
     if (address) {
       var txs = [];
-      var hashes = address.txs.reverse();
-      if (address.txs.length < count) {
-        count = address.txs.length;
-      }
-      lib.syncLoop(count, function (loop) {
-        var i = loop.iteration();
-        db.get_tx(hashes[i].addresses, function(tx) {
-          if (tx) {
-            txs.push(tx);
-            loop.next();
-          } else {
-            loop.next();
-          }
-        });
-      }, function(){
-
-        res.render('address', { active: 'address', address: address, txs: txs});
-      });
+      res.render('address', { active: 'address', address: address, txs: txs});
 
     } else {
       route_get_index(res, hash + ' not found');
